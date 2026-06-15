@@ -1,0 +1,26 @@
+
+body {
+  margin:0;
+  background:#071113;
+  color:white;
+  font-family:Arial,sans-serif;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+}
+
+.hero{
+  padding:120px 40px;
+}
+
+h1{
+  font-size:4rem;
+}
