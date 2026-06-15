@@ -50,6 +50,33 @@ export default function CarDetails({ cars }: { cars: RegistryCar[] }) {
           </div>
         </div>
 
+        <div className="metaGrid">
+          <article>
+            <span>Last updated</span>
+            <strong>{car.updatedAt}</strong>
+          </article>
+          <article>
+            <span>Entry created</span>
+            <strong>{car.createdAt}</strong>
+          </article>
+          <article>
+            <span>Updated by</span>
+            <strong>{car.updatedBy}</strong>
+          </article>
+          <article>
+            <span>Data confidence</span>
+            <strong>{car.dataConfidence}</strong>
+          </article>
+          <article>
+            <span>Originality</span>
+            <strong>{car.originalityRating}</strong>
+          </article>
+          <article>
+            <span>Photos / documents</span>
+            <strong>{car.photoCount} / {car.documentCount}</strong>
+          </article>
+        </div>
+
         <div className="detailGrid">
           <article><span>Current registration</span><strong>{car.registration}</strong></article>
           <article><span>Partial VIN</span><strong>{car.vinPublic}</strong></article>
@@ -87,6 +114,31 @@ export default function CarDetails({ cars }: { cars: RegistryCar[] }) {
                     <em className={statusClass(item.status)}>{item.status}</em>
                   </div>
                 ))}
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="subsection">
+          <h2>Update history</h2>
+          <p className="subtle">
+            Future owner edits should be reviewed before publication. This log will
+            show what changed, when it changed, and whether it was updated by an owner
+            or registry administrator.
+          </p>
+
+          <div className="timeline">
+            {car.changelog.map((entry) => (
+              <article className="timelineEntry" key={`${entry.date}-${entry.updatedBy}`}>
+                <div>
+                  <strong>{entry.date}</strong>
+                  <span>{entry.updatedBy}</span>
+                </div>
+                <ul>
+                  {entry.changes.map((change) => (
+                    <li key={change}>{change}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>

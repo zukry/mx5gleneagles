@@ -31,7 +31,7 @@ export default function Home({ cars }: { cars: RegistryCar[] }) {
           <h2>{cars.length} documented car{cars.length === 1 ? "" : "s"}</h2>
           <p>
             The registry is in early development. Each entry links to its own page
-            with public-safe vehicle details.
+            with public-safe vehicle details and an edit history.
           </p>
         </aside>
       </section>
@@ -54,7 +54,7 @@ export default function Home({ cars }: { cars: RegistryCar[] }) {
       <section className="section split">
         <div>
           <p className="eyebrow">Project</p>
-          <h2>Cars get a summary first, then a full entry.</h2>
+          <h2>Registry index first, full history after click.</h2>
         </div>
         <div className="copy">
           <p>
@@ -63,8 +63,8 @@ export default function Home({ cars }: { cars: RegistryCar[] }) {
           </p>
           <p>
             Full car pages can contain registration history, originality checklists,
-            photographs, restoration records and notes without making the registry
-            overview messy.
+            photographs, restoration records, source notes and update history without
+            making the registry overview messy.
           </p>
         </div>
       </section>

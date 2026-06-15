@@ -6,6 +6,12 @@ export type OriginalityItem = {
   status: OriginalityStatus
 }
 
+export type ChangeLogEntry = {
+  date: string
+  updatedBy: string
+  changes: string[]
+}
+
 export type RegistryCar = {
   id: string
   slug: string
@@ -17,6 +23,14 @@ export type RegistryCar = {
   country: string
   status: string
   summary: string
+  createdAt: string
+  updatedAt: string
+  updatedBy: string
+  dataConfidence: "Low" | "Medium" | "High"
+  originalityRating: string
+  photoCount: number
+  documentCount: number
+  changelog: ChangeLogEntry[]
   originality: OriginalityItem[]
 }
 
@@ -33,6 +47,27 @@ export const cars: RegistryCar[] = [
     status: "Under restoration",
     summary:
       "A UK Mazda MX-5 Gleneagles currently undergoing a major preservation-focused restoration.",
+    createdAt: "15 June 2026",
+    updatedAt: "15 June 2026",
+    updatedBy: "Registry administrator",
+    dataConfidence: "High",
+    originalityRating: "Exceptional",
+    photoCount: 0,
+    documentCount: 0,
+    changelog: [
+      {
+        date: "15 June 2026",
+        updatedBy: "Registry administrator",
+        changes: [
+          "Created registry entry GE-001",
+          "Added current registration N9 OWO",
+          "Added previous registration chain",
+          "Added partial VIN",
+          "Added initial originality checklist",
+          "Added restoration status",
+        ],
+      },
+    ],
     originality: [
       { category: "Identity", name: "Original Gleneagles edition", status: "Present" },
       { category: "Identity", name: "Montego Blue Mica paint", status: "Present" },

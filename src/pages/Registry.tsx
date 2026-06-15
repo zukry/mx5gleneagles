@@ -20,6 +20,7 @@ export default function Registry({ cars }: { cars: RegistryCar[] }) {
             <span>Registration</span>
             <span>Colour</span>
             <span>Country</span>
+            <span>Updated</span>
             <span>Status</span>
           </div>
 
@@ -29,6 +30,7 @@ export default function Registry({ cars }: { cars: RegistryCar[] }) {
               <span>{car.registration}</span>
               <span>{car.colour}</span>
               <span>{car.country}</span>
+              <span>{car.updatedAt}</span>
               <span><mark>{car.status}</mark></span>
             </Link>
           ))}
