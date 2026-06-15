@@ -2,15 +2,15 @@
 
 Independent enthusiast registry and archive for the UK-market Mazda MX-5 Gleneagles Special Edition.
 
-## Development
+## Install
 
 ```bash
 npm install
-npm run dev
+npm install react-router-dom
 ```
 
-## Build
+## Development
 
 ```bash
-npm run build
+npm run dev
 ```

@@ -45,10 +45,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.9rem;
 }
 
-.brand span {
-  color: #c7a969;
-  margin-right: 7px;
-}
+.brand span { color: #c7a969; margin-right: 7px; }
 
 .topbar nav {
   display: flex;
@@ -58,7 +55,8 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.95rem;
 }
 
-.topbar a:hover { color: #fff; }
+.topbar a:hover,
+.topbar a.active { color: #fff; }
 
 .hero {
   min-height: 680px;
@@ -66,6 +64,11 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
   gap: 48px;
   align-items: center;
+}
+
+.pageHeader {
+  padding: 120px 0 70px;
+  max-width: 840px;
 }
 
 .eyebrow, .panelLabel {
@@ -78,30 +81,29 @@ a { color: inherit; text-decoration: none; }
   font-weight: 850;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   margin: 0;
   letter-spacing: -0.055em;
 }
 
 h1 {
-  max-width: 880px;
+  max-width: 900px;
   font-size: clamp(3.1rem, 7.8vw, 7.1rem);
   line-height: 0.93;
 }
 
 h2 {
-  font-size: clamp(2rem, 4.4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3.6rem);
   line-height: 0.97;
 }
 
-h3 { font-size: 1.6rem; line-height: 1.1; }
-h4 { font-size: 1.15rem; }
+h3 { font-size: 1.35rem; line-height: 1.1; }
 
-.lead {
+.lead, .pageHeader p {
   max-width: 720px;
   margin: 30px 0;
   color: #ded7c5;
-  font-size: clamp(1.1rem, 2vw, 1.38rem);
+  font-size: clamp(1.1rem, 2vw, 1.28rem);
   line-height: 1.65;
 }
 
@@ -144,7 +146,7 @@ h4 { font-size: 1.15rem; }
 .heroPanel { padding: 30px; }
 .heroPanel h2 { font-size: 2rem; letter-spacing: -0.04em; margin-bottom: 18px; }
 
-.heroPanel p, .copy p, .submitPanel p, .sectionHeading p, .carHero p, .subtle {
+.heroPanel p, .copy p, .submitPanel p, .carHero p, .subtle {
   color: #d8d0bc;
   line-height: 1.8;
   font-size: 1.04rem;
@@ -172,11 +174,6 @@ h4 { font-size: 1.15rem; }
   grid-template-columns: 0.78fr 1.22fr;
   gap: 54px;
   align-items: start;
-}
-
-.sectionHeading {
-  max-width: 760px;
-  margin-bottom: 30px;
 }
 
 .registryTable {
@@ -218,7 +215,14 @@ mark {
   font-weight: 800;
 }
 
-.carPage { padding: 34px; }
+.carPage { padding: 34px; margin: 70px 0; }
+
+.backLink {
+  display: inline-flex;
+  margin-bottom: 30px;
+  color: #c7a969;
+  font-weight: 850;
+}
 
 .carHero {
   display: grid;
@@ -267,8 +271,8 @@ mark {
   color: #fff;
 }
 
-.subsection { margin-top: 36px; }
-.subsection h3 { margin-bottom: 14px; }
+.subsection { margin-top: 42px; }
+.subsection h2 { margin-bottom: 14px; }
 
 .regHistory {
   display: flex;
@@ -306,7 +310,7 @@ mark {
   border-radius: 24px;
 }
 
-.checkGroup h4 {
+.checkGroup h3 {
   margin-bottom: 15px;
   color: #f7edda;
 }
@@ -329,6 +333,7 @@ mark {
 .present { color: #97d89b; }
 .missing { color: #e79285; }
 .unknown { color: #d8d0bc; }
+.modified { color: #dec277; }
 
 .submitPanel { padding: 38px; }
 
@@ -336,7 +341,6 @@ mark {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  margin: 28px 0;
 }
 
 .submitGrid article {
@@ -346,8 +350,8 @@ mark {
   border: 1px solid rgba(244, 241, 232, 0.1);
 }
 
-.submitGrid h3 {
-  font-size: 1.3rem;
+.submitGrid h2 {
+  font-size: 1.55rem;
   margin-bottom: 12px;
 }
 
