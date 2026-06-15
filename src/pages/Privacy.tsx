@@ -11,17 +11,15 @@ export default function Privacy() {
       </section>
 
       <section className="section split">
-        <div>
-          <h2>What stays private</h2>
-        </div>
+        <div><h2>What stays private</h2></div>
         <div className="copy">
           <p>
             Owner emails, phone numbers, addresses, full VINs and private notes
             should not be published on car pages.
           </p>
           <p>
-            Future owner edits should go through an approval queue before appearing
-            publicly. This protects against false claims, incorrect data and vandalism.
+            Owner edits go through an approval queue before appearing publicly.
+            This protects against false claims, incorrect data and vandalism.
           </p>
         </div>
       </section>

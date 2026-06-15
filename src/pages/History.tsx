@@ -11,9 +11,7 @@ export default function History() {
       </section>
 
       <section className="section split">
-        <div>
-          <h2>Production numbers mystery</h2>
-        </div>
+        <div><h2>Production numbers mystery</h2></div>
         <div className="copy">
           <p>
             The Gleneagles is usually described as a 400-car UK special edition,

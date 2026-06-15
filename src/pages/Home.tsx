@@ -1,13 +1,21 @@
-import { Link } from "react-router-dom"
-import type { RegistryCar } from "../data/cars"
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { fetchCars } from '../services/cars'
+import type { Car } from '../types/database'
 
 const stats = [
-  { label: "Original production", value: "400", note: "commonly quoted figure" },
-  { label: "Peak DVLA count", value: "467", note: "recorded in 1996" },
-  { label: "DVLA total", value: "279", note: "2025 Q4 licensed + SORN" },
+  { label: 'Original production', value: '400', note: 'commonly quoted figure' },
+  { label: 'Peak DVLA count', value: '467', note: 'recorded in 1996' },
+  { label: 'DVLA total', value: '279', note: '2025 Q4 licensed + SORN' },
 ]
 
-export default function Home({ cars }: { cars: RegistryCar[] }) {
+export default function Home() {
+  const [cars, setCars] = useState<Car[]>([])
+
+  useEffect(() => {
+    fetchCars().then(setCars).catch(() => setCars([]))
+  }, [])
+
   return (
     <main>
       <section className="hero">
@@ -28,10 +36,10 @@ export default function Home({ cars }: { cars: RegistryCar[] }) {
 
         <aside className="heroPanel">
           <p className="panelLabel">Registry status</p>
-          <h2>{cars.length} documented car{cars.length === 1 ? "" : "s"}</h2>
+          <h2>{cars.length} documented car{cars.length === 1 ? '' : 's'}</h2>
           <p>
-            The registry is in early development. Each entry links to its own page
-            with public-safe vehicle details and an edit history.
+            Entries now load from Supabase. Each car gets a public summary row and
+            a separate full record page.
           </p>
         </aside>
       </section>
@@ -47,7 +55,7 @@ export default function Home({ cars }: { cars: RegistryCar[] }) {
         <article className="statCard">
           <strong>{cars.length}</strong>
           <span>Documented here</span>
-          <small>registry just started</small>
+          <small>live registry entries</small>
         </article>
       </section>
 
@@ -62,9 +70,8 @@ export default function Home({ cars }: { cars: RegistryCar[] }) {
             known cars, then click a row to open the full page for that car.
           </p>
           <p>
-            Full car pages can contain registration history, originality checklists,
-            photographs, restoration records, source notes and update history without
-            making the registry overview messy.
+            Owner changes are submitted as pending requests. Approved data can then be
+            applied to the public car record without giving direct edit access to the database.
           </p>
         </div>
       </section>
